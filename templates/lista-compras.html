@@ -1,0 +1,28 @@
+{% block content %}
+    <h2>Lista de Compras Cadastradas</h2>
+    <ul style="font-size: 18px">
+        <table border="1">
+            {% for compra in compras %}
+                <tr align="center">
+                    <td>Código</td>
+                    <td>Valor (R$)</td>
+                    <td>Data</td>
+                    <td>Percentual de cashback (%)</td>
+                    <td>Valor do cashback (R$)</td>
+                    <td>Status do Pedido</td>
+                </tr>
+                <tr align="center">
+                    <td>{{compra.codigo}}</td>
+                    <td>{{compra.valor}}</td>
+                    <td>{{compra.data.date}}</td>
+                    <td>{{compra.percent_cashback}}</td>
+                    <td >{{compra.cashback}}</td>
+                    <td>{{compra.status}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </ul>
+    <a href="../">
+        <button type="button">Cancelar</button>
+    </a>
+{% endblock %}

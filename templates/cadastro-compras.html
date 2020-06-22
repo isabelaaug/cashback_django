@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends "model-page.html" %}
+
+{% block content %}
+    <h2>Cadastrando Compras</h2>
+    <br><br>
+    <form action="submit" method="POST"> {% csrf_token %}
+        <label>Código</label>
+        <input type="text" name="codigo" size="23" value="{{ codigo }}">
+        <br><br>
+        <label>CPF</label>
+        <input type="number" name="cpf_compra" maxlength="11" size="23" value="{{ cpf_compra }}">
+        <br><br>
+        <label>Valor da Compra</label>
+        <input type="number" name="valor" size="23" value="{{ valor }}">
+        <br><br>
+        <label>Data da Compra</label>
+        <input type="date" name="data" value="{{ get_data_input }}">
+        <br><br>
+        <button type="submit">Salvar</button>
+        <a href="../">
+            <button type="button">Cancelar</button>
+        </a>
+    </form>
+
+{% endblock %}

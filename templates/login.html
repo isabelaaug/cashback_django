@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cashback Boticário</title>
+</head>
+<body>
+    <h1 align="center">Cashback Boticário</h1>
+        <form action="submit" method="POST"> {% csrf_token %}
+        <div align="center">
+            <label>Usuário: </label>
+            <input type="text" name="username">
+            <label>Password: </label>
+            <input type="password" name="password">
+            <button type="submit">Entrar</button>
+        </div>
+        </form>
+        <div align="center">
+            <label>Não possui conta?</label>
+            <a href="../register/">
+                <button type="button">Cadastre-se</button>
+            </a>
+        </div>
+
+        {% for message in messages %}
+            <div align="center">
+            <strong>Erro: </strong>{{ message }}
+            </div>
+        {% endfor %}
+</body>
+</html>
+
+
+
+

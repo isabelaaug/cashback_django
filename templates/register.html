@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends "model-page.html" %}
+
+{% block content %}
+    <h2>Cadastrando Revendedor</h2>
+    <br><br>
+    <form action="submit" method="POST"> {% csrf_token %}
+        <label>Nome</label>
+        <input type="text" name="nome" size="23" value="{{ nome }}">
+        <br><br>
+        <label>CPF</label>
+        <input type="number" name="cpf" maxlength="11" size="23" value="{{ cpf }}">
+        <br><br>
+        <label>E-mail</label>
+        <input type="text" name="email" size="23" value="{{ email }}">
+        <br><br>
+        <label>Senha</label>
+        <input type="password" name="password" size="23" value="{{ password }}">
+        <br><br>
+        <button type="submit">Salvar</button>
+        <a href="/">
+            <button type="button">Cancelar</button>
+        </a>
+    </form>
+
+{% endblock %}
